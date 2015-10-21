@@ -39,7 +39,14 @@ RSpec.configure do |config|
   end
 # simplecov
   require 'simplecov'
-  SimpleCov.start 'rails'
+  require 'simplecov-json'
+  require 'simplecov-rcov'
+  SimpleCov.formatters = [
+     SimpleCov::Formatter::HTMLFormatter,
+     SimpleCov::Formatter::JSONFormatter,
+     SimpleCov::Formatter::RcovFormatter
+  ]
+  SimpleCov.start
   
 =begin
   require 'capybara/rspec'
