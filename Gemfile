@@ -12,7 +12,6 @@ gem 'activerecord'
 gem 'mysql2'
 gem 'devise'
 gem "rspec-rails", :group => [:development, :test]
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -46,3 +45,5 @@ gem 'turbolinks'
 
 # To use debugger
 # gem 'debugger'
+gem 'tarantula', '0.5.1'
+gem 'excellent'
