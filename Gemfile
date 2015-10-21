@@ -47,6 +47,7 @@ gem 'turbolinks'
 # To use debugger
 # gem 'debugger'
 #gem 'excellent'
-gem 'tarantula'
-
+gem 'tarantula', require: 'tarantula-rails3'
+gem 'excellent'
+gem 'simplecov', require: false
 
