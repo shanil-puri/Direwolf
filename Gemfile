@@ -9,7 +9,7 @@ gem 'activeresource'
 gem 'activerecord'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 gem "rspec-rails", :group => [:development, :test]
 
