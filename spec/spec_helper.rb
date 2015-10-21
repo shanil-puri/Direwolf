@@ -98,5 +98,7 @@ RSpec.configure do |config|
     SimpleCov::Formatter::JSONFormatter,
     SimpleCov::Formatter::RcovFormatter
   ]
-  SimpleCov.start
+  SimpleCov.start do
+     add_filter "/bin/"
+  end
 end
