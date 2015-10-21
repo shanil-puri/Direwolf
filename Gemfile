@@ -50,4 +50,3 @@ gem 'turbolinks'
 gem 'tarantula', require: 'tarantula-rails3'
 gem 'excellent'
 gem 'simplecov', require: false
-
