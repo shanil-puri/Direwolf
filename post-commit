@@ -1,0 +1,25 @@
+#!/bin/bash
+#eval "java -jar jenkins-cli.jar -s http://52.88.112.178:8080/ build 'Direwolf'"
+
+curBranch=`git rev-parse --abbrev-ref HEAD`
+usr=`whoami`
+time=`date +%s`
+
+branchName="$curBranch"_build
+
+git checkout -b $branchName
+git push origin $branchName
+
+if [ $curBranch == "dev" ]
+then
+	java -jar jenkins-cli.jar -s http://52.89.132.135:8080/ build 'dev'
+elif [ $curBranch == "release" ]
+then
+	java -jar jenkins-cli.jar -s http://52.89.132.135:8080/ build 'release'	
+fi
+
+#curl -X POST http://52.88.112.178:8080/job/devops/branch/$branchName/build?delay=0sec
+
+git checkout $curBranch
+git push origin :$branchName
+git branch -D $branchName
