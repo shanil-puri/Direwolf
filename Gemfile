@@ -48,3 +48,9 @@ gem 'turbolinks'
 # gem 'debugger'
 gem 'tarantula', '0.5.1'
 gem 'excellent'
+
+
+
+
+
+
