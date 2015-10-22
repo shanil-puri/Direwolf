@@ -48,4 +48,3 @@ then
 else
    echo "AWS present"
 fi
-AWS=ABCD123451234512345123451
