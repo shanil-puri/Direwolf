@@ -23,7 +23,9 @@ fi
 git checkout $curBranch
 git push origin :$branchName
 git branch -D $branchName
-git diff HEAD~1 > check_diff
+
+# TOKEN GATE
+git diff HEAD~1 | grep -i + check_diff
 # Regex to find the AWS Access Key ID
 AWS=`grep '[0-9,A-Z]\{20\}$' check_diff|wc -l`
 # Regex to find the Digital Ocean Token
@@ -40,12 +42,15 @@ then
       then
          echo "All Set, Lets commit"
       else
+         git reset HEAD~1
          echo "SSH Secret key"
       fi
    else
       echo "DO present"
+      git reset HEAD~1
    fi
 else
    echo "AWS present"
+   git reset HEAD~1
 fi
-
+AWS = 12345678901234567890
