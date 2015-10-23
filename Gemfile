@@ -55,3 +55,4 @@ gem 'simplecov-json', require: false
 gem 'factory_girl_rails'
 gem 'forgery'
 gem 'faker'
+
