@@ -2,10 +2,25 @@
 import subprocess
 import json
 print "EXTENDED ANALYSIS..."
-analysis_data = subprocess.check_output(["/usr/bin/ruby", "-r", "./code_comment_percent.rb", "-e", "CodeCommentPercent.count_lines 'rb'"])
-print analysis_data
+path='./app/'
+import os
+count=0
+l = 0
+for root, dirs, files in os.walk(path, topdown=False):
+    for name in files:
+        if ".rb" in name:
+           n=os.path.join(root, name)
+           with open(n, "r") as f:
+              lines = f.readlines();
+              for line in lines:
+                   if line.strip().startswith("#"):
+                        count = count+1
+                   l=l+1
+print "Code to comment ratio is",float(count)/l * 100
+cc= float(count)/l * 100
+
 print "ANALYSIS GATE..."
-ana_cov = float(analysis_data.split('\n')[6])
+ana_cov = float(cc)
 if ana_cov < 5:
    print  ana_cov
    print "Analysis Gate FAILED"
