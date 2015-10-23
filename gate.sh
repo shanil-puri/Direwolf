@@ -2,7 +2,7 @@
 import subprocess
 import json
 print "EXTENDED ANALYSIS..."
-analysis_data = subprocess.check_output(["/usr/bin/ruby", "-r", "/test/code_comment_percent", "-e", "CodeCommentPercent.count_lines 'rb'"])
+analysis_data = subprocess.check_output(["/usr/bin/ruby", "-r", "./code_comment_percent.rb", "-e", "CodeCommentPercent.count_lines 'rb'"])
 print analysis_data
 print "ANALYSIS GATE..."
 ana_cov = float(analysis_data.split('\n')[6])
