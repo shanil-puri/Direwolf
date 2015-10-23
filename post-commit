@@ -25,7 +25,7 @@ git push origin :$branchName
 git branch -D $branchName
 
 # TOKEN GATE
-git diff HEAD~1 | grep -i + check_diff
+git diff HEAD~1 | grep -i + >check_diff
 # Regex to find the AWS Access Key ID
 AWS=`grep '[0-9,A-Z]\{20\}$' check_diff|wc -l`
 # Regex to find the Digital Ocean Token
