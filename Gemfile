@@ -52,4 +52,6 @@ gem 'excellent'
 gem 'simplecov', require: false
 gem 'simplecov-rcov', require: false
 gem 'simplecov-json', require: false
-
+gem 'factory_girl_rails'
+gem 'forgery'
+gem 'faker'

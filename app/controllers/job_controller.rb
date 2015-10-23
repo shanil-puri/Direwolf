@@ -27,6 +27,15 @@ class JobController < ApplicationController
   end
 
   def my_jobs
+    if current_user.name.start_with?('A')
+      flash[:notice] = "No jobs for user with A"
+    end
+    if current_user.email.include?(current_user.name)
+      flash[:notice] = "email includes name"
+    end
+    if current_user.phone.include?('11')
+      flash[:notice] = "phone number contains 911"
+    end
     if current_user.is_admin?
       flash[:notice] = "You are the ADMIN. Please remember: With great power comes great responsibility :)"
       @jobs = Job.all

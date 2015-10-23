@@ -12,10 +12,10 @@ git push origin $branchName
 
 if [ $curBranch == "dev" ]
 then
-	java -jar jenkins-cli.jar -s http://52.88.112.178:8080/ build 'dev'
+	java -jar jenkins-cli.jar -s http://52.89.132.135:8080/ build 'dev'
 elif [ $curBranch == "release" ]
 then
-	java -jar jenkins-cli.jar -s http://52.88.112.178:8080/ build 'release'	
+	java -jar jenkins-cli.jar -s http://52.89.132.135:8080/ build 'release'	
 fi
 
 #curl -X POST http://52.88.112.178:8080/job/devops/branch/$branchName/build?delay=0sec
