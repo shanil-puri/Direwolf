@@ -4,7 +4,7 @@ require 'forgery'
 
 RSpec.describe JobController, :type => :controller do
    $i  = 0
-   $max =0
+   $max =10
    while  $i < $max do
       before(:each) do
         pass = Forgery(:basic).password + Forgery(:basic).password
