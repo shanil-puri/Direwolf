@@ -29,5 +29,6 @@ class CodeCommentPercent
     puts "#{(n.to_f/o.to_f).round(2)} LOC/file."
     puts "#{m.to_s} lines of comments."
     puts "#{code_ratio_percent.to_s} percent of code coverage"
+    puts code_ratio_percent.to_s
   end
 end
